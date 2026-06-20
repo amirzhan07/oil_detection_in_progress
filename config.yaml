@@ -1,0 +1,44 @@
+project:
+  # Name of the project.  This can be used to organise
+  # datasets, logs and model checkpoints.
+  name: oil_detection_camera
+  # Directory where data (videos, frames, annotations) are stored.
+  data_dir: data
+
+logging:
+  # Path to the CSV file where detection summaries will be recorded.
+  csv_path: logs/detections.csv
+  # Directory where annotated screenshots will be saved.  Each
+  # entry in the CSV references a file in this folder.
+  screenshot_dir: logs/screenshots
+
+detector:
+  # Threshold for binarising grayscale images when detecting dark
+  # regions.  Lower values make the detector more sensitive to dark
+  # patches but may increase false positives.
+  threshold: 30
+  # Minimum contour area (in pixels) for a region to be considered
+  # a valid oil slick.  Small blobs below this size are ignored.
+  min_area: 500
+
+navigator:
+  # Width of the frame in pixels.  This value is used to
+  # normalise centroid coordinates when determining the steering
+  # command.  If set to 0 the Navigator will attempt to read
+  # the width from the camera at runtime.
+  frame_width: 0
+  # Normalised thresholds (0–1) for turning left or right.  If the
+  # centroid of the largest oil region falls below ``left_threshold``
+  # the boat will turn left.  If it falls above ``right_threshold``
+  # it will turn right.  Otherwise it will go forward.
+  left_threshold: 0.4
+  right_threshold: 0.6
+  # Commands associated with each action.  These strings can be
+  # forwarded over serial to control an external device.
+  left_command: left
+  right_command: right
+  forward_command: forward
+  stop_command: stop
+  # Minimum area (pixels) required to issue a movement command.  If
+  # the detected oil patch is too small the system will stop.
+  area_threshold: 5000
