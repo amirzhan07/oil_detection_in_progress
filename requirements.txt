@@ -1,0 +1,13 @@
+# Core dependencies required for the oil detection project
+numpy
+opencv-python
+PyYAML
+pyserial
+pandas
+tqdm
+# Note: the original repository relied on ultralytics for YOLOv8.  To
+# keep this project self‑contained and easy to run without access to
+# proprietary models, the detection logic in this in‑progress version
+# uses simple colour and thresholding techniques instead of YOLO.
+# If you wish to restore YOLO support, install the ultralytics
+# package and adjust ``detector.py`` accordingly.
