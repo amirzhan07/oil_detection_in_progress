@@ -61,7 +61,7 @@ def apply_clahe(image: np.ndarray, clip_limit: float = 2.0, tile_grid_size: tupl
 
 
 def gray_world_normalization(image: np.ndarray) -> np.ndarray:
-    """Perform simple Gray-World colour balancing.
+    """Perform simple Gray‑World colour balancing.
 
     This normalises the colour channels so that their averages become
     equal.  It is a common technique to remove colour casts.
@@ -95,7 +95,7 @@ def preprocess_frame(frame: np.ndarray) -> np.ndarray:
     """Run a sequence of preprocessing steps on a frame.
 
     The function reduces glare, applies CLAHE and performs
-    Gray-World normalisation.  It returns the processed image
+    Gray‑World normalisation.  It returns the processed image
     without modifying the input.
 
     Parameters

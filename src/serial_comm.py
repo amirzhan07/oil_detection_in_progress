@@ -53,7 +53,7 @@ class SerialCommandSender:
     def send(self, command: str) -> None:
         """Send a single command string over the serial connection.
 
-        The command will be encoded as UTF-8 and terminated with a
+        The command will be encoded as UTF‑8 and terminated with a
         newline if one is not already present.
         """
         if self._ser is None:

@@ -1,6 +1,6 @@
 """Navigation logic based on detected oil regions.
 
-The navigator consumes high-level summaries of detection results and
+The navigator consumes high‑level summaries of detection results and
 decides steering commands.  It does not perform any image
 processing itself.  Instead, it examines the size and position of
 detected regions to choose between commands such as ``left``,
@@ -83,7 +83,7 @@ class Navigator:
         -----
         1. If no regions are detected or the largest region is below
            ``area_threshold``, return ``stop_command``.
-        2. Compute the normalised x-coordinate of the largest region's
+        2. Compute the normalised x‑coordinate of the largest region's
            centroid (between 0 and 1).  If it lies below
            ``left_threshold`` return ``left_command``.  If it lies above
            ``right_threshold`` return ``right_command``.  Otherwise
